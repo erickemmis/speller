@@ -1,0 +1,24 @@
+0. a pneumoconiosis caused by inhalation of very fine silicate or quartz dust.
+- Merriam Webster(https://www.merriam-webster.com/medical/pneumonoultramicroscopicsilicovolcanoconiosis)
+
+1.  returns the struct rusage who's members consist of a snapshot of the resources used by the selected 'who'. Which 'who' is either,
+for the current open thread, recursively all everything up to the current call, or the call thread itself.
+
+2.  There are 16 members to the struct rusage.
+
+3.  Passing the pointer is much more efficient when passing larger structs because it does cost resources to make a copy(even more
+so when the struct is larger).
+
+4.  Get next character from the filepointer in the form of an integer and assign it to integer c while that charater is not the end
+of the file. If this character is is a letter or an apostrophy and we have already started a word, add character to the word at
+current index and increase index. If current index is greater than maximum word length ignore rest of string and overwrite current
+word. If the character is a digit ingore rest of string and dump(overwrite) current word. If c is not an apostraphie, character, or digit
+and we have already started a word must be end or word. Add end of string character to word and check spelling while timing the function.
+If it turns out the word is misspelled print it. Reset the word index to 0 preparing for the next word.
+
+5.  By using the fgetc() we can include "/'" in our words read in as well as ignore those with #'s while we bring in the characters instead
+of having to loop back through the word once we have already read it back from the file. This makes the functionality more diverse as
+well as saving some time.
+
+6.We want the pointers to the current word and dictionary to not change because we will need to released from memory in unload so we
+can manage our memory we are using and avoid memory leaks.
